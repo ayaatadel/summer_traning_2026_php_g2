@@ -1,0 +1,8 @@
+download git : https://git-scm.com/install/windows
+
+create account on github : https://github.com/signup
+
+upload on git hub :    open gitbash
+
+git add .
+

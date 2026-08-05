@@ -1,0 +1,102 @@
+=========== HTML ===================
+hyper text mark up language 
+
+== tools :
+- vs code download :  https://code.visualstudio.com/Download?_exp_download=fb315fc982
+how to install : https://www.geeksforgeeks.org/installation-guide/how-to-install-visual-studio-code-on-windows/
+
+
+
+========== 
+file_name.html
+        ============== tags ===========
+        <tag_name>  content </tag_name>
+
+        -- openining closing tag :: <tag_name>  content </tag_name>
+        -- self closing tag <tag_name>  
+
+
+<!DOCTYPE html> : html5
+<html>   // root element
+
+<head>
+<meta name="description" content="" >
+<meta name="key words" content="" >
+<title>           </title>
+
+
+</head>
+<body>
+
+
+p , h , text , images 
+
+</body>
+
+</html>
+
+
+SEO : Search Engine optimization 
+
+=========================
+tag
+<p>    content   </p>   : element
+
+
+
+public attributes  : width , height , name , class 
+element attributes   : specific with element 
+
+
+<img src="pathofimage" alt="alternative " title="">
+
+absolute path :D:\summer_traning_2026\php_g2_2026\html\imgaes
+relative path 
+
+
+
+block element                    inline element
+p , h                                img
+
+
+
+comment :  documentation 
+<!--        --> || ctrl+ظ
+
+/*
+
+*/
+
+
+a ===> href="path"   target=""  ==> default : self : open in same page 
+                                    blank : self : open in new page
+
+
+========== list =======> list Item
+ordered list   ==========> 1 , a , I    
+un ordered list   ========> .
+description list   ========> 
+
+
+
+========== table
+<table>
+<thead>
+
+</thead>
+<tbody>
+
+</tbody>
+</table>
+
+============== form
+method : post ,get ==> send data
+get (default) : send data in url  ===> atrribute (name)
+
+// userName=chd&userEmail=xvmsbdv%40gmail.com&userPassword=sadhsaj&userAge=25&User+Color=%23c42121&User+Cv=summer_training_project_description.pdf&BD=2026-08-13
+
+post  : doesn't show data in url
+
+
+
+=========== span  (inline element), div , section
