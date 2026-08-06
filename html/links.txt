@@ -22,3 +22,26 @@ git push origin master
 =============== clone
 
 git clone https://github.com/ayaatadel/summer_traning_2026_php_g2.git
+=====
+abd elrahman mostafa abd elrazeq --> permission ===> attend
+abd elrahman mostafa hessin
+yousef ashraf attia
+basha waheed basha gebril
+mohammed ibrahem kheder
+mohammed kamal abd elsattar
+abdallah farag mosa
+ahmed salah ahmed ibrahim 
+habiba saeed ali
+nour mohammed elabumi --
+heba mohammed gamil --
+esraa mohsen 
+mariam ali 
+abd elrahamn ahmed saeed
+asem abd elhammed 
+abd elrahamn mahmoud mohammed rezq
+mohammedd sadek  mohhamed 
+youef ali hagazy
+esraa gamal foda
+login ahmed
+salma waleed
+basmall mahmoud

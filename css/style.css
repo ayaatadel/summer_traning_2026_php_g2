@@ -1,0 +1,239 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&display=swap'); */
+
+* {
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.navbar {
+    /* width: 1000px;
+    height: 1000px; */
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid gray;
+    font-size: 12px;
+    text-align: center;
+
+    /* background-image: url('../html/imgaes/demo/photo-1442512595331-e89e73853f31\ \(3\).jfif');
+    background-size: auto; 
+    background-repeat: repeat;
+    background-position: center; */
+}
+
+/* html{
+    font-size: 10px;
+} */
+/* :root{
+    font-size: 13px;
+} */
+.navbar-pages-item {
+    color: rgb(145, 58, 58);
+    /*font-size: 50%;
+  */
+    /*font-size: 2em;
+  */
+    /*font-size: 2rem;
+  */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /*font-family:"Bitcount Prop Single", system-ui;
+  */
+    /* font-weight: bold;
+    font-style: italic;
+    text-align: left; */
+    /*text-decoration: dotted;
+  */
+    /* text-transform: capitalize; */
+    /* text-decoration-line:line-through ;
+  -moz-text-decoration-line:line-through ; */
+    /* text-decoration-color: blue; 
+  -moz-text-decoration-color: blue; */
+
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 20px;
+    /* background-color: burlywood; */
+}
+
+a {
+    text-decoration: line-through;
+    color: black;
+}
+
+/* .contact{
+    background-color: rgb(255, 144, 9);
+    color: rgba(202, 202, 231, 0.856);
+
+    font-size: 12px;
+} */
+
+
+
+.text {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 200px;
+    height: 200px;
+    border: 5px;
+    border-radius: 50%;
+
+    /*border-radius: 15px 45px 70px 90px;
+    */
+    /*border-style: dashed;
+    */
+    border-style: solid;
+    border-color: red;
+    /*overflow: hidden;
+    */
+    /*overflow:scroll;
+    */
+    padding: 20px;
+    margin: 15px;
+    /*-webkit-border-radius: 15px 45px 70px 90px;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    -webkit-border-radius: 50%;
+} */
+}
+
+/* span{
+    color: red;
+    border: 1px solid black;
+    /* margin-to
+    p: 20px;
+     
+     margin: 200px;
+
+     padding: 20px;
+} */
+
+/* content-box : 200 + 1+1 + 5+5=212 */
+/* border-box : 200 */
+
+.test {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    padding: 5px;
+    margin: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* body {
+    height: 1000px;
+}
+
+div {
+    border: 1px solid black;
+    /* margin: 10px; 
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+    text-align: center; 
+}
+*/
+/* .parent {
+    width: 400px;
+    height: 500px;
+    text-align: center;
+    position: relative;
+
+} */
+
+/* .A {
+    background-color: brown; */
+/* position: sticky; */
+/* top: 10px; */
+/* position: absolute; */
+/* top: 0; */
+/* top:0; */
+/* right: 0; */
+
+/* left: 0; */
+
+/* } */
+
+/* .A:hover {
+    background-color: blue;
+    border-radius: 50%;
+    color: aliceblue;
+    text-align: center;
+} */
+
+/* .B {
+    background-color: rgb(100, 80, 80); */
+
+/*position: absolute;
+    */
+/* } */
+
+/* .B {
+    background-color: rgb(100, 80, 80);
+
+}
+
+.C {
+    background-color: rgb(42, 165, 97);
+
+}
+
+.D {
+    background-color: rgb(117, 70, 204);
+
+} */
+
+
+
+/* .float-nav{
+    /* float: right; */
+
+/* } */
+
+/* .float-nav-pages-item{
+  float:left;
+  margin: 10px;
+  text-align: center; */
+/* text-decoration: none; */
+/* list-style: none;
+
+} */
+/* .clear{
+    clear:both
+}  */
+
+
+
+/* .nav-pages {
+    /* display: flex;
+    list-style: none;
+    justify-content: center;
+    align-items: center; 
+
+} 
+    */
+
+div.parent {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: aliceblue;
+    border: 1px solid black;
+    padding: 5px;
+    flex-wrap: wrap;
+    height: 200px;
+    overflow: scroll;
+    gap:3px;
+
+}
+
+div.child {
+    width: 300px;
+    background-color: rgb(13, 76, 131);
+    border: 1px solid rgb(185, 17, 17);
+    padding: 5px;
+    margin: 2px;
+}

@@ -1,0 +1,266 @@
+===== CSS ===========
+Cascading style sheet (design)
+
+====> where write code css
+- inline   ==> in tag html
+- internal  ==>  <style>  </style>
+- external  ===> external file
+
+---------- Periority ------------- 
+== first periorty : inline <p style="color:red"> hello </p>
+
+=== order : internal , external
+
+
+============== 
+selector {
+     properity:value;
+}
+
+tagname 
+
+h1{
+      color : red ;
+     properity:value;
+}
+
+
+
+p{
+    background: blue;
+    font-size:12px;
+}
+
+
+================= select element =====
+- tag name  ==> h1{properity:value;}
+- id  (unique) :   #header { properity:value; }
+- class (repeated): .class_name{properity:value;}
+
+
+
+------------- perirority ----------
+                Selector Specificity : (id,class,name)
+tagname   (0,0,1)  : 1  
+id         (1,0,0) : 100  
+class       (0,1,0)  : 10
+ 
+inline ====> 1000
+
+/*    البراجراف اللي جوا كلاس كونتنت  */
+/* .content p{
+
+    color:red;
+} */
+
+/*     البراجراف اللي واخده كلاس تكست*/
+/* p.text{
+color:blue;
+} */
+
+ /* 10 + 10 =20 */
+/* .text .text-span{
+    color:yellow
+} */
+/*  1 + 10 = 11 */
+/* span.text-span{
+color:blueviolet
+} */
+
+/* #main-content span{
+
+    span that in id with name : main-content 
+} */
+
+/* span#test{
+     
+span that take id= test
+} */
+
+
+
+======================
+
+-------> 0 (black) - 255(white)
+                 
+color   ===> rgb(red,green , blue) , #redgreenblue
+red : rbg(1,0,0)   || (255,0,0)
+green: rbg(0,1,0)  || (0,255,0)
+blue: rbg(0,0,1)   || (0,0,255)
+
+0-f
+#a01919 : red
+#00ff00 : green
+#0000ff75 : blue
+
+----------- rgb -------
+rgb(202, 202, 231);
+color:red;
+  
+
+rgba : a===>  opacity (0-1) 
+
+
+12px   : pixel
+12rem  :  root element (html)
+12em   :   parent of element
+12%    :    parent
+
+vh:
+vw:
+
+
+
+===================== font family =====
+-- times new roman
+-- sans , sans serif
+
+
+================ box model  (element (content) , border , padding , margin)
+-- type of element (inline , block)
+
+content 
+padding  ===> padding : 5px (top , right , bottom , left)
+          (top , right , bottom , left)
+padding : 5px
+padding : 5px 10px 12px 3px;
+padding : 10px 12px   ==> top , bottom (10px)  , left,right(12px)
+padding-right:4px;
+padding-left:4px;
+padding-top:4px;
+padding-bottom:4px;
+
+------------ margin --------
+          (top , right , bottom , left)
+margin : 5px  (top , right , bottom , left)
+margin : 5px 10px 12px 3px;
+margin : 10px 12px   ==> top , bottom (10px)  , left,right(12px)
+margin-right:4px;
+margin-left:4px;
+margin-top:4px;
+margin-bottom:4px;
+
+
+--------------- border ---------
+border-style
+border-size 
+border-color
+
+===================================
+block                                   inline
+
+width of row                             width=content
+can not accept element beside it       can  accept element next to  it 
+
+ul , nav , li , p ,h                        img , link 
+
+width                                  width =content
+height                                    height =content
+padding                                  padding :accept
+margin                                    margin  : left , wright
+
+
+
+
+
+
+
+============== box sizing 
+-- border-box
+-- content-box  (default)
+
+
+width : 200px 
+                       box-sizing: content-box
+-- total width = content(width) + padding  (left+right)+ border(left+right)
+                = 200 + 5+5 + 2+2=214
+
+                      box-sizing: border-box
+-- total width (200) = content + padding  (left+right)+ border(left+right)
+               
+height : 200px 
+                       box-sizing: content-box
+-- total height = content(height) + padding  (top,bottom)+ border(top,bottom)
+                = 200 + 5+5 + 2+2=214
+
+                      box-sizing: border-box
+-- total width (200) = content + padding  (top,bottom)+ border(top,bottom)
+               
+
+==================== display ==========
+display : inline
+display : block
+display : inline-block  (accept element next to it + block(padding ,margin , width , height))
+
+
+====================== position =============
+==*************** body : default position:relative
+fixed 
+absolute : بيتحرك بالنسبه لاول  parent relative
+relative 
+sticky
+
+
+=============== flex
+
+flex on parent to manage child
+
+justify-content   (x)
+justify-content : flex-start (left)
+justify-content : flex-end (right)
+justify-content : center (cener)
+justify-content : space-between (divide space betwen them)
+justify-content : space-around (divide space around them)
+
+align-items       (y)
+
+align-items : flex-start (top)
+align-items : flex-end (bottom)
+align-items : center (cener)
+baseline: Items display at the baseline of the container.
+stretch: Items are stretched to fit the container.
+
+
+
+=========== element in ceter of page 
+parent : display:flex
+justify-content : center
+align-items : center
+
+
+
+========= flex-direction
+
+
+row: Items are placed the same as the text direction.
+row-reverse: Items are placed opposite to the text direction.
+column: Items are placed top to bottom.
+column-reverse: Items are placed bottom to top.
+
+
+
+============ flex-direction : column
+
+align-items (x)
+justify:content (y)
+
+
+=================== Flex-wrap ========
+div ===> width =200px
+
+
+============ child ==========
+order :
+Sometimes reversing the row or column order of a container is not enough. In these cases, we can apply the order property to individual items. By default, items have a value of 0, but we can use this property to also set it to a positive or negative integer value (-2, -1, 0, 1, 2).
+
+Use the order property to reorder the frogs according to their lilypads.
+
+
+align-self
+
+align-self : flex-start (top)
+align-self : flex-end (bottom)
+align-self : center (cener)
+baseline: Items display at the baseline of the container.
+stretch: Items are stretched to fit the container.
+

@@ -1,0 +1,12 @@
+=== try install text and use it in design
+
+== https://flexboxfroggy.com/
+
+flex-shrink
+
+
+======= animation  ===== 
+====== font-asoem
+
+
+========== apply site using css
