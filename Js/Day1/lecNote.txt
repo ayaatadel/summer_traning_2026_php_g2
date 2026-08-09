@@ -1,0 +1,58 @@
+***************** Agenda *****************
+= history of js
+= where we write js code
+= variables
+= data types
+= operators
+= condition
+= control flow
+= ternary operator
+= communication with user
+
+
+
+********************** history of js *************************
+======= brenden ecch (dynasmic : 10 days )
+--- netdcspe =====>  mocha ========= live script =======  java script === echma script 6 === es6
+
+
+/**
+html  : strucre of site
+css : style 
+js  : dymanic 
+*/
+
+
+
+
+********************** where we write js code *************************
+
+-- inline   : same tag 
+-- enternal   ==> <script>
+-- external  ==> file.js ====>
+
+********************** variables *************************
+
+var , let , const (constant variable )
+
+declare variable ===> var variable_name 
+assignment value to  variable ===>  variable_name ="value"
+
+change value ==> reasignment ====>  variable_name ="hello"
+
+var x="iti";
+x="iti menoufia branch"
+let track ="php";
+track="react";
+
+const PI=3.14
+
+
+== js :  loosly typed language 
+       know data type of any variable by its value 
+
+var name="mahmoud"  ===> string
+var age =26     ====> number 
+var success = true ===> boolean
+
+//==================== habiba saeed
