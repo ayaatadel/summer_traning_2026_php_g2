@@ -1,0 +1,8 @@
+=======> type of (undefined , nan , null)
+
+
+
+// constructor function 
+// generator function 
+// Async Function 
+// higher order function ----> call back function 
