@@ -6,3 +6,12 @@
 // generator function 
 // Async Function 
 // higher order function ----> call back function 
+
+
+
+- toString
+- split
+-slice
+
+
+====== slice , splice
