@@ -1,0 +1,29 @@
+- callback function , High Order Function (HOF)
+ -array api
+   -- foreach
+   -- map
+   -- filter
+   -- find
+   -- some
+   -- Every
+   --- reduce
+- Synchronus && Asynchronous functions
+ 
+ -Destructring in array
+
+ - Object
+   -- object.assign()
+   -- object.keys
+   -- object.entries
+   -- object.values
+
+-Destructring in object
+
+
+
+- Hoisting
+- var , let , const
+
+ - this
+
+
