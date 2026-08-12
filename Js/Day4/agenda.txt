@@ -1,0 +1,7 @@
+= call , bind , apply , seal , freeze
+= constructor function
+= execution in js engine
+--------------------------------
+= xml request 
+== promise 
+== async and await 
