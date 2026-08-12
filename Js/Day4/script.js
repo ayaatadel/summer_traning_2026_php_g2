@@ -219,3 +219,56 @@
  * Event loop  (check if Js Execution context is Empty or not)
  *
  */
+
+// =============== DOM   ==========
+/**
+ * DOM : Document Object Model
+ *
+ *
+ * ====> html : control   ===>create , update , delete , style , action
+ *
+ * select :
+ *  id
+ * name  : tag name
+ * name : attribute on elemnt
+ * class
+ * querySelector  : one element 
+ * qurySelector all : node list
+ */
+
+let head = document.getElementById("head");
+console.log(head);
+head.innerText="js"
+head.innerHTML=`<span> HTML BY JS<span>`
+
+let container = document.getElementsByClassName("content");
+// console.log(container[0]); // HTML Collection ===> array (element)
+// /**
+//  * select elements by index
+//  */
+
+// // let text=document.getElementsByTagName("p")
+// let text = document.getElementsByName("pg"); // node list ==> array [elments]
+// // console.log(text[0]);
+// console.log(text);
+
+// let spanContent = document.querySelector("#textSpan");
+// console.log(spanContent);
+
+// let test = document.querySelectorAll(".content"); 
+// console.log(test);
+
+/**
+ * content of elemnt
+ *======== html , text
+
+ <span>  test (text) </span>: html
+ */
+// container[0].innerHTML=`
+// <span id="textSpan" style='color:red'>text</span>
+// <p id="textSpan" style='color:red'>fdf,mfgnadfj,hgjhdfajghjkdfhjkhj</p>
+// `
+// container[0].innerText=`
+// <span id="textSpan" style='color:red'>text</span>
+// <p id="textSpan" style='color:red'>fdf,mfgnadfj,hgjhdfajghjkdfhjkhj</p>
+// `
