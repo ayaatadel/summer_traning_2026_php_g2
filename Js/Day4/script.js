@@ -123,21 +123,75 @@
  */
 
 
-function User(name,email, address){
-    // user : name , email , address
-this.name=name;
-this.address=address;
-this.email=email;
+// function User(name,email, address){
+//     // user : name , email , address
+// this.name=name;
+// this.address=address;
+// this.email=email;
 
-}
+// }
 
-// new 
-var user1=new User("mohammed","mohammed@gmail.com","cairo")
-var user2=new User("mohmoud","mahmoud@gmail.com","cairo")
-user1.print=function()
-{
-    console.log("hello");
+// // new 
+// var user1=new User("mohammed","mohammed@gmail.com","cairo")
+// var user2=new User("mohmoud","mahmoud@gmail.com","cairo")
+// user1.print=function()
+// {
+//     console.log("hello");
     
-}
-user1.id=5;
-console.log(user1,user2);
+// }
+// user1.id=5;
+// console.log(user1,user2);
+
+
+
+//=================== JS Engine (execute code) ===============
+/**
+ * chrome : v8
+ * edge: v8
+ * Node.js:V8
+ * Firefox : spiderMonkey
+ * safari:JavaScriptCore
+ * 
+ * 
+ * -------------- Js Engine
+ *  Memory Heap  ===> object
+ * Call Stack  ==> function  ===>
+ * 
+ * 
+ * === Call Stack =========
+ * 
+ * global Execution : Global Variables 
+ *  execution context : define  function execution context
+ * ==== use variable not in function but in execution ==> use that in execution 
+ *  
+ *  after function finshed it will be deleted from execution context
+ */
+// console.log(x);
+
+// var x=10;
+// function print()
+// {
+//     var y=17
+//     var x=10;   // new variable in function 
+//     console.log("hello");
+//     first();
+//     console.log(x);
+//     console.log(y);
+// }
+// function first()
+// {
+//     console.log("first"); 
+//     console.log(x);
+     
+// }
+// function second()
+// {
+//      x=13; 
+//     console.log("second");
+//     console.log(x); 
+// }
+// var x=5;
+// print();
+// second();
+// console.log(x);
+
