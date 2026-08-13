@@ -1,0 +1,4 @@
+========= fetch data using promise and Async and await 
+====== show count of a data after addToCart
+----- bonous
+      show products that added to cart   
