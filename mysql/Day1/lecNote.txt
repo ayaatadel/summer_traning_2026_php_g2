@@ -1,0 +1,64 @@
+===========> Entity : table (Student , courses)
+===========> attribute : column (name , age , address)
+
+============================ Key Attribute ===================
+- single Key : ID  
+- candidate key: 2 unique keys  ==> Employee_ID , Employee_SSN
+- composite key : 2 more than two columns and theses columns may be have repeted data
+                      Employee_email , Employee_Name 
+
+
+
+ERD ==> Company
+
+employees : name , email , address , id
+departrment
+projects
+
+
+
+============= Relation =============
+strong relationship  : between strong entities
+week realationship   : between strong entities and week enitites  (employee - depecdences)
+Degree of a Relationship :
+unary (employee-suoervisor) 
+binary (employee - department)
+ternary (student - course -department)
+n-ary : (4-nary) : more than three entities
+
+Cardinality Ratio:  
+one to one  : one entity - one entity
+one to many : one entity - more than one entity
+many to many : more than one entity- more than one entity
+
+
+------------------- mandatory and not mandatory -----------------
+may  : o
+must : |
+
+
+==============================mapping : erd---> table ======================
+relation 
+ one to many  : PK(one) put in table many as foreign key
+ many to many  : generate new table and put (PK) of two tables
+ one to one     : 
+    -- two tables mandatory : (pk) of any one of them and put in another table
+    -- two tables mandatory : generate new table and put (PK) of two tables
+    -- one table mandatory and another not mandatory :PK(mandatory) put in table many as foreign key
+    -- two tables not mandatory : generate new table and put (PK) of two tables
+
+Entity : weak - strong : (pk) of strong  and put in week entity 
+
+attributes : 
+multi valued attribute :generate new table and put (PK) this table , and multi valued attirbute
+composite attribute : put attributes that this attibute contain
+ex:
+address(streat , city)
+name(firstName, lastName)
+
+
+Department : number , name 
+
+
+
+================= more information : https://www.guru99.com/er-diagram-tutorial-dbms.html
