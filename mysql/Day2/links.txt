@@ -1,0 +1,8 @@
+xamp : https://www.apachefriends.org/download.html (php.2)
+laragon : https://www.dropbox.com/scl/fo/ifvh73k2zmzod7m4h3gg5/AGmei0WBa7HLTJp6J65Yc_c/laragon-wamp-v6.1.exe?rlkey=mhnoo9e353ooo5cpj0adjso4e&e=7&st=u3dutb9f&dl=0
+
+
+
+// host : localhost:3306
+// userName
+// password

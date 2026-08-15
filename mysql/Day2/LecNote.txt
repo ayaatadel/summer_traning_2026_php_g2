@@ -1,0 +1,219 @@
+SQL : Standard Query Language
+
+tools : xamp , laragon ,sql server , wamp (windows)
+linux : lamp , xamp
+mac : mamp
+ 
+ -- userNaME : root
+ -- password: 
+
+
+==========================  Database
+1- create new database : create database  iti_sm_php_g2_2026;
+2- delete database : drop database iti_sm_php_g2_2026;
+
+==========================  tables
+1- create table
+create table department(dep_Number integer (20) PRIMARY KEY AUTO_INCREMENT, name varchar (255) unique NOT Null);
+
+2- delete table : drop table  department
+
+3- add column to table : alter table department add age integer (10)
+4- drop column from table : alter table department drop COLUMN age 
+4- rename table : rename table department to dep  || alter table department rename dep 
+5- add column in first :  ALTER TABLE emp_project
+ADD COLUMN id INT PRIMARY KEY AUTO_INCREMENT FIRST;
+
+
+
+
+
+/**
+
+ON DELETE CASCADE: Automatically deletes rows in the child table when the referenced parent row is deleted.
+ON DELETE Null: Automatically null rows in the child table when the referenced parent row is deleted.
+
+ON UPDATE CASCADE: Automatically updates foreign key values in the child table when the primary key value in the parent table changes
+
+----------
+datatype : date
+gender :enum("male" , "female")
+courses :enum("php" , "mysql" , "js")
+decimal(5,3)  ===> 10000,999
+
+---------- Alias name 
+as : name that show to user  and doesn't effect into data base
+**/
+
+
+======= Sql : 
+department : create table department(dep_Number integer (20) PRIMARY KEY AUTO_INCREMENT, name varchar (255) unique NOT Null);
+
+department_location : create table department_location(dep_number_fk integer (20)  not null , location varchar (255) ,
+foreign key (dep_number_fk) REFERENCES department (dep_Number)  ON DELETE CASCADE ON UPDATE CASCADE);
+
+
+employee :CREATE TABLE employee (
+    ssn INT PRIMARY KEY AUTO_INCREMENT,
+    address VARCHAR(150),
+    name VARCHAR(200),
+    BD DATE,
+    gender ENUM('male', 'female'),
+    salary DECIMAL(7,3),
+
+    dep_num_fk INT NULL,
+    emp_supervisor INT  NULL,
+
+    FOREIGN KEY (dep_num_fk)
+        REFERENCES department(dep_Number)
+        ON DELETE SET NULL
+        ON UPDATE CASCADE,
+
+    FOREIGN KEY (emp_supervisor)
+        REFERENCES employee(ssn)
+        ON DELETE SET NULL
+        ON UPDATE CASCADE
+);
+
+
+project :CREATE TABLE project (
+    number integer(10) primary key auto_increment,
+    name varchar(255) unique  not null , 
+    location varchar(255) , 
+    dep_number_fk integer (20) ,
+    foreign key (dep_number_fk) REFERENCES department (dep_Number)  ON DELETE  set null ON UPDATE CASCADE
+);
+
+Emp_project :CREATE TABLE Emp_project (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    emp_num INT NULL,
+    pro_num INT  NULL,
+    hours decimal(3,2),
+
+      foreign key (pro_num) 
+      REFERENCES project  (number) 
+       ON DELETE  set null 
+       ON UPDATE CASCADE,
+
+        FOREIGN KEY (emp_num)
+        REFERENCES employee(ssn)
+        ON DELETE SET NULL
+        ON UPDATE CASCADE
+
+);
+
+
+
+Emp_dependences :CREATE TABLE Emp_dependences (
+   
+    id INT (20) primary Key,
+   name VARCHAR(200),
+    BD DATE,
+    gender ENUM('male', 'female'),
+    emp_num int not null ,
+
+        FOREIGN KEY (emp_num)
+        REFERENCES employee(ssn)
+        ON DELETE cascade
+        ON UPDATE CASCADE
+
+);
+
+
+
+======================== insert values ==========
+NSERT INTO department (name) VALUES ( 'ai'), ('is');
+INSERT INTO `employee` ( `name`, `address`, `BD`, `gender`, `salary`, `dep_num_fk`, `emp_supervisor`) VALUES ( 'nour', 'menoufia', '2004-05-01', 'male', '1000', '3', '1');
+
+
+--
+INSERT INTO `employee` ( `name`, `address`, `BD`, `gender`, `salary`, `dep_num_fk`, `emp_supervisor`) VALUES ( 'nour', 'menoufia', '2004-05-01', 'male', '1000', '3', '1');
+
+
+==================== select =======
+all data :select * from department 
+specific columns  :select name, BD from employee;
+specific columns  with alias :select name as "employee name" , BD as "Birth date "from employee;
+
+
+--------------- condition ------
+
+select * from employee where salary>1000
+
+-----------------range---------
+select * from employee where salary between 1000 and 2000;
+
+
+select * from employee where address in ("cairo","banha","sadat");
+
+              --------------------- NOT IN -------------
+select * from employee where address Not in ("cairo","banha","sadat");
+
+---------- null data ----
+SELECT * FROM `employee` WHERE address is null;
+---------- not null data ----
+SELECT * FROM `employee` WHERE address is NOT null;
+
+
+--------------------- Select DISTINCT : slect data that not repeated --
+
+select DISTINCT address from employee;
+
+----------- And , OR , Not
+SELECT * FROM `employee` WHERE not salary = 7000;
+SELECT * FROM `employee` WHERE  salary = 7000 and address="cairo";
+SELECT * FROM `employee` WHERE  salary = 7000 or address="cairo";
+
+
+
+===================== Update =============
+
+UPDATE table_name
+SET column1 = value1, column2 = value2; : Set All Rows with these values
+
+UPDATE employee
+SET salary=6000
+--------------------------- all salary for all employess = 6000
+
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;  : set only rows that match this condition 
+
+
+UPDATE employee
+SET salary=6000
+WHERE salary>3000;
+
+------------------------ salary for only employee >3000 = 6000
+
+
+
+======================= Delete from table 
+
+delete all :delete from employee
+dekete (condition) : delete from employee WHERE address is null
+
+
+
+
+
+
+================= select using order by 
+
+max to low : SELECT * FROM `employee` ORDER by salary DESC;
+
+
+low to max : SELECT * FROM `employee` ORDER by salary ASC ;==>default
+
+
+========== Aggregiation Functions : max , min , sum , count , avg
+SELECT SUM(salary) AS "total salary" FROM employee;
+SELECT MIN(salary) AS "min salary" FROM employee;
+SELECT Max(salary) AS "max salary" FROM employee;
+SELECT AVG(salary) AS "Avg salary" FROM employee;
+
+
+============ like =====
+SELECT * FROM `employee` WHERE name like "_a%";==> second char = a
+SELECT * FROM `employee` WHERE name like "a%";==> first char = a
+SELECT * FROM `employee` WHERE name like "%a%";==>  any chararacters in first and in half (a) and any characters in end
