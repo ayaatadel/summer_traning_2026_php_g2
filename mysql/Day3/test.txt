@@ -1,0 +1,12 @@
+=================
+
+specif table ============> table
+
+get data from table depened on another table =========> join  , sub query 
+
+
+
+
+
+
+==================

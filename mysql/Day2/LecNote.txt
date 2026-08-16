@@ -217,3 +217,14 @@ SELECT AVG(salary) AS "Avg salary" FROM employee;
 SELECT * FROM `employee` WHERE name like "_a%";==> second char = a
 SELECT * FROM `employee` WHERE name like "a%";==> first char = a
 SELECT * FROM `employee` WHERE name like "%a%";==>  any chararacters in first and in half (a) and any characters in end
+
+
+================= department =========
+add emp_sss ====> foreign key : 
+ALTER TABLE department
+ADD employee_ssn INT,
+ADD CONSTRAINT fk_department_employee
+    FOREIGN KEY (employee_ssn)
+    REFERENCES employee(ssn)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE;

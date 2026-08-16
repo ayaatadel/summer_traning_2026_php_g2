@@ -1,0 +1,74 @@
+============ search :
+ ================ stored  procedural
+================ transaction 
+================ indexes 
+================ using join
+================ natural join 
+
+
+=================== course maharah tech : https://maharatech.gov.eg/course/view.php?id=740
+
+
+
+
+* Try to create the following Queries:
+
+1.	Display the Department id, name and id and the name of its manager.
+2.	Display the name of the departments and the name of the projects under its control.
+3.	Display the full data about all the dependence associated with the name of the employee they depend on him/her.
+4.	Display the Id, name and location of the projects in Cairo or Alex city.
+5.	Display the Projects full data of the projects with a name starts with "a" letter.
+6.	display all the employees in department 30 whose salary from 1000 to 2000 LE monthly
+7.	Retrieve the names of all employees in department 10 who works more than or equal10 hours per week on "AL Rabwah" project.
+8.	Find the names of the employees who directly supervised with Kamel Mohamed.
+9.	Retrieve the names of all employees and the names of the projects they are working on, sorted by the project name.
+10.	For each project located in Cairo City , find the project number, the controlling department name ,the department manager last name ,address and birthdate.
+11.	Display All Data of the mangers
+12.	Display All Employees data and the data of their dependents even if they have no dependents
+13.	Insert your personal data to the employee table as a new employee in department number 30, SSN = 102672, Superssn = 112233.
+
+14.	Insert another employee with personal data your friend as new employee in department number 30, SSN = 102660, but don’t enter any value for salary or manager number to him.
+
+15.	In the department table insert new department called "DEPT IT" , with id 100, employee with SSN = 112233 as a manager for this department. The start date for this manager is '1-11-2006'
+
+
+DQL
+
+16.	Display (Using Union Function)
+a.	 The name and the gender of the dependence that's gender is Female and depending on Female Employee.
+b.	 And the male dependence that depends on Male Employee.
+17.	For each project, list the project name and the total hours per week (for all employees) spent on that project.
+18.	Display the data of the department which has the smallest employee ID over all employees' ID.
+19.	For each department, retrieve the department name and the maximum, minimum and average salary of its employees.
+20.	List the last name of all managers who have no dependents.
+
+
+
+
+procedural 
+1-Create a stored procedure to display all employees in a given department.
+2-Create a stored procedure that takes an employee SSN as a parameter and displays all employee information.
+3-Create a stored procedure to increase the salary of all employees in a specific department by 10%.
+4-Create a stored procedure that returns the total number of employees in a given department.
+5-Create a stored procedure to display the employee with the highest salary in each department.
+
+
+
+transcaction 
+1-Create a transaction to insert a new employee and commit the changes.
+2-Create a transaction that inserts a new employee and then rolls back the transaction.
+3-Create a transaction to update employee salaries by 5%, then rollback the changes.
+4-Demonstrate the use of COMMIT, ROLLBACK, and SAVEPOINT with suitable examples.
+
+
+index
+1-Create an index on the Employee Last Name.
+2-Create a composite index on (Department Number, Salary).
+3-List all indexes created on the Employee table.
+4-Drop the index created on Employee Last Name.
+5-Explain when indexes improve query performance and when they may reduce performance.
+
+
+
+
+

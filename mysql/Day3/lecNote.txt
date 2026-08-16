@@ -1,0 +1,137 @@
+limit :limit number of rows
+ofset : limit 3 ofset 3 ==> get 3 rows + skip first 3 rows
+
+SELECT * FROM `employee` limit 2 OFFSET 3;
+
+select employee data that take max  salary 
+SELECT * FROM `employee`  order by salary DESC LIMIT 1
+
+
+select  employee data that take 2 max  salary 
+SELECT * FROM `employee`  order by salary DESC LIMIT 2
+
+
+------------------------------------------------ Groub By , Having 
+--- Aggregtiaon funtion : max , min , sum , count , average    ===> group by 
+
+1-select count of employees in each department 
+
+select dep_num_fk , count(*) as "Employee Count" from employee GROUP by (dep_num_fk);
+
+SELECT d.dep_Number, d.name, COUNT(e.ssn) AS employee_count
+ FROM department d INNER JOIN Employee e 
+ ON d.dep_Number = e.dep_num_fk
+  GROUP BY d.dep_Number, d.name;
+
+
+
+
+
+*********************** Join *************************
+department , employee =========> relation 
+
+- inner join 
+-- outer join 
+-- left outer join 
+-  right join 
+- self join 
+- using join && natural join 
+
+
+
+--------------------------------
+department (left)  join employee (right)
+
+
+SELECT d.dep_Number, d.name, COUNT(e.ssn) AS employee_count 
+FROM department d LEFT join Employee e
+ ON d.dep_Number = e.dep_num_fk
+  GROUP BY d.dep_Number, d.name;
+
+  -------------------------------------------- select ALL DATA IN department untill (employee = null)
+SELECT d.dep_Number, d.name, COUNT(e.ssn) AS employee_count 
+FROM department d Right join Employee e
+ ON d.dep_Number = e.dep_num_fk
+  GROUP BY d.dep_Number, d.name;
+
+  -------------------------------------------- select ALL DATA IN employee  untill (department = null)
+SELECT d.dep_Number, d.name, COUNT(e.ssn) AS employee_count 
+FROM department d inner join Employee e
+ ON d.dep_Number = e.dep_num_fk
+  GROUP BY d.dep_Number, d.name;
+
+  -------------------------------------------- select data shared between employee and department
+SELECT d.dep_Number, d.name, COUNT(e.ssn) AS employee_count 
+FROM department d  join Employee e
+ ON d.dep_Number = e.dep_num_fk
+  GROUP BY d.dep_Number, d.name;
+
+  -------------------------------------------- select data shared between employee and department execpt null
+
+
+  full join (left union right )
+
+SELECT d.dep_Number, d.name, COUNT(e.ssn) AS employee_count FROM department d left join Employee e ON d.dep_Number = e.dep_num_fk GROUP BY d.dep_Number, d.name UNION SELECT d.dep_Number, d.name, COUNT(e.ssn) AS employee_count FROM department d RIGHT join Employee e ON d.dep_Number = e.dep_num_fk GROUP BY d.dep_Number, d.name;
+
+
+
+
+--------------- Self join ------------- 
+select e1.name as employee_name , e2.name as supervisor_name from employee e1 join employee e2 on e1.ssn=e2.emp_supervisor;
+
+
+
+ ***************** Examples on Join *********************
+select  d.name  ,e.name from department d INNER join employee e on d.employee_ssn = e.ssn;
+
+اسامي الموظفين الموجودين جوا كل قسم
+
+-----------------------------------------
+اسم القسم لكل موظف
+
+select e.name , d.name from employee e inner join department d on d.dep_number=e.dep_num_fk
+-------------------------------
+
+
+
+================= Sub query ==========
+select * from employee where salary > (SELECT AVG (salary) from employee)
+select * from employee WHERE salary = (select MAX(salary) from employee) LIMIT 1;
+
+========== seccond max salary
+select * from employee WHERE salary < (select MAX(salary) from employee) ORDER by salary DESC LIMIT 1;
+
+
+
+-- in 
+SELECT * from employee where dep_num_fk in (SELECT dep_number_fk from department_location WHERE location = "cairo");
+
+-- exist 
+SELECT * FROM department d WHERE EXISTS (SELECT 1 FROM employee e WHERE e.dep_num_fk=d.dep_Number) LIMIT 1;
+-- all 
+SELECT * FROM employee where salary > all (SELECT salary from employee WHERE dep_Number=3)
+
+
+
+
+=================== case when 
+
+SELECT name , salary, 
+CASE 
+WHEN salary > 6000 then "high"
+ WHEN salary > 4000 then "medim" 
+ else "low" END as salary_level 
+ FROM employee;
+
+
+=========== call getEmployeesData();
+
+
+DELIMITER $$
+ CREATE PROCEDURE GetEmployeeByDepartment(in dep_id int)
+BEGIN 
+SELECT * from employee WHERE  dep_num_fk=dep_id ;
+End $$
+
+
+call GetEmployeeByDepartment (4);
