@@ -12,3 +12,9 @@
 • Arrays
 $arr=[1,"iti",true];
 $arr2=array("mohammed","ahmed","adel");
+
+
+
+//========= include page in another page
+// require  : path (error) : stop execution of code
+// include : path (error) :waring + complete run of code 

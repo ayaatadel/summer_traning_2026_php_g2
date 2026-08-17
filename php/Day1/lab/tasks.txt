@@ -1,0 +1,17 @@
+===== show this data in table   using bootstrap classes 
+
+$data=[
+    ["name"=>"basmala",
+    "address"=>"cairo"]
+    ,
+     ["name"=>"habiba",
+    "address"=>"sadat"]
+    ,
+     ["name"=>"mohammed",
+    "address"=>"menoufia"]
+];
+
+
+== create page login , registet
+
+== different between (isset , isEmpty)
