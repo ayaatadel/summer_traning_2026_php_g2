@@ -1,0 +1,11 @@
+=========> all users data : if user not login prevent to go to this page
+and redirect to login page
+
+
+======= after user login : allUsers.php and print all users Data in table 
+
+
+id  userName       UserEmail                        Actions
+1   mahmoud       mahmoud@gmail.com              [delete] [update]
+2   nada          nada@gmail.com                 [delete] [update]
+3   malak          malak@gmail.com               [delete] [update]

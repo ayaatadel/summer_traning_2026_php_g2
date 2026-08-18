@@ -1,0 +1,40 @@
+. function 
+. function types 
+ -- clousre (Anomonus function)
+ -- Arrow function
+----- By Value & By Refrence
+. Array functions (count,array_pop , array_push , shift , unshift)
+. String Functions
+ (
+  strlen :
+  trim : 
+  strtoupper : 
+  strtolower: 
+  str_replace: 
+  str_word_count: 
+  str_contains() ==> str_pos : 
+  str_starts_with : 
+  str_starts_with : 
+  substr : 
+  explode : 
+  implode : 
+  .  || " ": String Concatenation
+ * implode :  Join array elements with a string
+ * 
+ * implode($separator = "", $array): string
+ * Join array elements with a string
+ * 
+ * explode : Split a string by a string (sperator) to get array
+  )
+. variable of variable
+. Super global variables
+. path data from form to file using super global variables
+$_GET	  : data from URL
+$_POST	  : data from Form
+$_SERVER  : information about server 
+$_REQUEST : GET + POST
+$_SESSION : store temporary data
+$_COOKIE  : store data in browser
+
+
+======== OOP 
