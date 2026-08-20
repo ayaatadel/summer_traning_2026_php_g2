@@ -5,7 +5,7 @@
   -- inheritance  ==> IS-A   (accepted : single , multi level , harrachical)
   -- Encapsulation
   -- Polymorphism (overriding +++ , overloading ----)
-  -- Abestraction
+  -- Abestraction  
 > self , this 
 > final 
 >Variable Classes :  static , const
