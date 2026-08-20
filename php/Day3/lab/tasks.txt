@@ -1,0 +1,22 @@
+ class A {
+  public static $count=0;
+  public $name;
+static function test ()
+{
+   
+     return  self::$count++;
+}
+
+
+
+}
+
+class B extends A {
+ static function test()
+{
+    
+}
+}
+
+
+== Different Between Composition and Aggregation
