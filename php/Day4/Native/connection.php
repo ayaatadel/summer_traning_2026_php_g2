@@ -13,7 +13,7 @@ $password = "";
 $connection = new PDO("$dbType:host=$dbhost;dbname=$dbName", $userName, $password);
 // var_dump($connection);
 
-
+session_start();
 // Insert , select 
 
 
