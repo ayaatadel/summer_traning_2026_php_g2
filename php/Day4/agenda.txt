@@ -1,0 +1,26 @@
+=======> Connection with Database 
+
+
+-- MysqlI -- mysql
+--PDO -- differen'y types from data base (mysql , postgrees)  ------> 
+
+cradentials : 
+--type of data base 
+-- name of data base 
+-- host 
+-- username 
+-- password 
+
+
+
+
+=========== Sql Injection : inject sql querys in data base
+
+-- query params 
+ 1- named parameters (:name)
+ 2- positional parameter (?) 
+
+
+ =========== Encrypt password :
+ -- md5
+ --hash 
