@@ -56,3 +56,18 @@ php artisan serve
 ctrl + c
  -------------- error : migration 
  php artisan migrate 
+
+
+
+
+
+ ========================
+
+ link ==> browser ==>  route ((/))   =====> function   ======> view =
+                                    =====> controller ===> view
+                                                       ===> model  ==> DB ==> VIew ===> User
+
+
+=============== Blade Engine : Enable write code php in html with out writing php tag ====> directive
+
+
