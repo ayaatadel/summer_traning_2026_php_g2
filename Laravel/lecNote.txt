@@ -32,6 +32,7 @@ users ---> profile , login , register , forget password , payment
 ================================= Tools  : laravel v.13============
 == php >= 8.3
 == package manager : composer 
+== composer download : https://getcomposer.org/download/
 
 =================================== Install Laravel Project =============
 composer global require laravel/installer   =========> single time
