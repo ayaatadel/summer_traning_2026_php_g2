@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -94,4 +96,30 @@ Route::get('/', function () {
 
 
 
-//==================== Data base ===============
+//==================== Users ===============
+
+route::get("/users",[UserController::class,'index'])->name("users.index");
+route::get('/users/{id}',[UserController::class,'show'])->name('users.show');
+route::delete('/users/{id}',[UserController::class,'destroy'])->name('users.destroy');
+
+
+route::resource("categories",CategoryController::class); // generate all routes with route name
+
+
+
+// list all routes : php artisan route:list
+/**                   url                                           route name                 function
+ *  GET|HEAD        categories .................................... categories.index › CategoryController@index
+ *  POST            categories .................................... categories.store › CategoryController@store
+*   GET|HEAD        categories/create ........................... categories.create › CategoryController@create
+*   GET|HEAD        categories/{category} ........................... categories.show › CategoryController@show
+*   PUT|PATCH       categories/{category} ....................... categories.update › CategoryController@update
+*   DELETE          categories/{category} ..................... categories.destroy › CategoryController@destroy
+*   GET|HEAD        categories/{category}/edit ...................... categories.edit › CategoryController@edit
+*                      --------------------------------
+*   GET|HEAD        users .................................................. users.index › UserController@index
+*   GET|HEAD        users/{id} ............................................... users.show › UserController@show
+*   DELETE          users/{id} ......................................... users.destroy › UserController@destroy
+
+ *
+ */
