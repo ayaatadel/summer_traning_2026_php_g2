@@ -9,5 +9,6 @@
     </head>
   <body>
 <h1 style="text-align: center;color:red"> Laravel course</h1>
+
   </body>
 </html>
