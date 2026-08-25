@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use APP\Models\Category;
 use APP\Models\Order_Item;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 
 class Product extends Model
 {
+    use HasFactory;
     //
     function category()
     {
