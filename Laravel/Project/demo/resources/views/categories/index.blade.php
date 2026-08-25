@@ -16,7 +16,10 @@
     <h1 style="text-align: center;color:red"> All Categories Page</h1>
     {{-- @dump($students) --}}
     {{-- <x-button class="primary" content="Login" /> --}}
-<x-button class="info" content="Add Categories"></x-button>
+    <a href="{{route('categories.create')}}">
+    <x-button class="info" content="Add Categories"></x-button>
+
+    </a>
     <table class="table table-striped w-75 m-auto">
         <thead>
             <th>
@@ -50,7 +53,7 @@
                         <a href="{{ route('categories.show',$category["id"] ) }}" style="text-decoration:none"><button
                                 class="btn btn-warning">View</button></a>
                     </div>
-                    <form action="">
+                     <form action="{{ route('categories.edit',$category["id"])}}" method="get">
 
                         <button class="btn btn-primary">Edit</button>
                     </form>

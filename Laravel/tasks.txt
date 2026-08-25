@@ -12,3 +12,10 @@ handel  :  index ,  show with all tables
 
 =========== show user profile : show orders of this user in table
 
+==================== Day 3 ==============
+complete cruds in all tables  and handel validation 
+any table has relation with another table use this relatio 
+
+
+============== users ===> orders 
+

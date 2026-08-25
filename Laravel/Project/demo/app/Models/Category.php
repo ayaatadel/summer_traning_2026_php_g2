@@ -11,6 +11,8 @@ class Category extends Model
 {
     //
       use HasFactory;
+     protected $fillable=["name" ,"descripyion"]; // access data
+    //  protected $guarded=["token"]; //   data that u can't have access
 
  function orders()
  {

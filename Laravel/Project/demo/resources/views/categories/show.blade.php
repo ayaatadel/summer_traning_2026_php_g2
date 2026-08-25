@@ -51,12 +51,12 @@
                         <a href="{{route('categories.index') }}"><button class="btn btn-success">Back</button> </a>
 
                     </div>
-                    <form action="">
+                    <form action="{{ route('categories.edit',$category["id"])}}" method="get">
 
                         <button class="btn btn-primary">Edit</button>
                     </form>
 
-                    <form action="{{ route('categories.destroy',$category["id"] ) }}" method="post">
+                    <form action="{{ route('categories.destroy',$category["id"])}}" method="post">
                         @csrf
                         @method('delete')
 
