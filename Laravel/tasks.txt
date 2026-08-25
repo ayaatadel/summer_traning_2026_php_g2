@@ -18,4 +18,6 @@ any table has relation with another table use this relatio
 
 
 ============== users ===> orders 
+============== product ===> categoryName(click==> category.show) 
 
+handel login and register for user
