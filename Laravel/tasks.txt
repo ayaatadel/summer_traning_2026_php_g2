@@ -25,4 +25,16 @@ handel login and register for user
 
 
 =================== Day 4 =========
-hangel authentication with (breez or jetstream)
+handel authentication with (breez or jetstream) ==> web
+use middleware (auth + admin) --> users + categories
+auth + user ==>  products
+
+
+------------------- api ----------------
+=== handel authentication with api ====> handel routes 
+use middleware (auth + admin) --> users + categories
+auth + user ==>  products
+
+login register (scantum)
+
+
