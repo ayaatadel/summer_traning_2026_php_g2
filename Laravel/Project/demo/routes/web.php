@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\checkRole;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -99,17 +100,25 @@ Route::get('/', function () {
 
 //==================== Users ===============
 
-route::get("/users", [UserController::class, 'index'])->name("users.index");
-route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
-route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+route::get("/users", [UserController::class, 'index'])->name("users.index")->middleware(['auth','checkRole']);
+// route::get('/users/{id}', [UserController::class, 'show'])->name('users.show')->middleware('auth');
+// route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy')->middleware(checkRole::class);
 
-route::get('/showLogin', [AuthController::class, 'showLogin'])->name('auth.showLogin');
+Route::middleware(['auth','checkRole'])->group(function () {
+
+    route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
+    route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+    route::resource("categories", CategoryController::class);
+}
+);
+
+route::get('/showLogin', [AuthController::class, 'showLogin'])->name('login');
 route::post('/login', [AuthController::class, 'login'])->name('auth.login');
-route::get('/showLogin', [AuthController::class, 'showLogin'])->name('auth.showLogin');
-route::get('/showRegister', [AuthController::class, 'showRegister'])->name('auth.showRegister');
-route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+// route::get('/showLogin', [AuthController::class, 'showLogin'])->name('auth.showLogin');
+route::get('/showRegister', [AuthController::class, 'showRegister'])->name('register');
+route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 route::post('/register', [AuthController::class, 'register'])->name('auth.register');
-route::resource("categories", CategoryController::class); // generate all routes with route name
+// route::resource("categories", CategoryController::class); // generate all routes with route name
 
 
 // list all routes : php artisan route:list

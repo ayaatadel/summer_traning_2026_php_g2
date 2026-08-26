@@ -15,30 +15,38 @@ class AuthController extends Controller
     public function showLogin()
     {
         //
-           return view('auth.login');
+        return view('auth.login');
     }
 
     /**
      * Show the form for creating a new resource.
      */
     public function login(Request $request)
+
+
     {
-        // dump($request);
-        // select data  , store
-       $cradentials= $request->validate([
-       'email'=>'required',
-       'password'=>'required',
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
-       if(Auth::attempt($cradentials)) // true or false
-        {
+
+        if (Auth::attempt($credentials)) {
+
             $request->session()->regenerate();
-            return redirect('/');
-        }else{
-            return back()->withErrors([
-                    "email"=>"check your email or password"
-            ]);
+
+            // لو المستخدم Admin
+            if (Auth::user()->role === 'admin') {
+                return redirect()->route('users.index');
+            }
+
+            // لو User عادي
+            return redirect()->route('home');
         }
-        }
+
+        return back()->withErrors([
+            'email' => 'The provided credentials are incorrect.',
+        ])->onlyInput('email');
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -47,7 +55,6 @@ class AuthController extends Controller
     {
         // form of register
         return view('auth.register');
-
     }
 
     /**
@@ -58,22 +65,22 @@ class AuthController extends Controller
         // dump($request);
         // select data  , store
         $request->validate([
-       'name'=>'required|string|max:255',
-       'email'=>'required|unique:users,email',
-       'password'=>'required|min:8',
+            'name' => 'required|string|max:255',
+            'email' => 'required|unique:users,email',
+            'password' => 'required|min:8',
         ]);
-        $user=User::create(
-           [
-             'name'=>$request->name,
-             'email'=>$request->email,
-             'password'=>Hash::make($request->password)
-           ]
+        $user = User::create(
+            [
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password)
+            ]
 
         );
         // dump($user);
         Auth::login($user); // login user ==> current user that login
         // return to_route('categories.index');
-        return redirect('/login');
+        return redirect('/showLogin');
     }
 
     /**
@@ -86,8 +93,5 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/showLogin');
-
     }
-
-
 }

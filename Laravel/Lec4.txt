@@ -33,5 +33,28 @@ php artisan serve
 
 ==================================
 == Authorization : Access , Privilages 
-== Middleware   
-== API
+== Middleware    :  وسيط مابين ال ريكوست و ال ريسبوس 
+
+user(url: request) ===> middleware ===> route ==> controller
+/**
+Auth  : login , register
+guest : public pages
+throttle : number of request
+verified : email verified or not
+password.confirm : confirm on password
+**/
+
+
+generate Middleware :
+php artisan make:middleware checkRole
+
+========= Group =======
+
+
+== API : Apllication program Interface
+
+laravel    <====  API  ===> mobile 
+controller , model ,migrtation , seeder , factory , request , middleware  ==>all except (view)
+
+postman : https://www.postman.com/downloads/ 
+register on postman 

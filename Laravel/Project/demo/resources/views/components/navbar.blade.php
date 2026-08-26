@@ -18,13 +18,13 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ route('auth.showRegister') }}">Register</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('register') }}">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ route('auth.showLogin') }}">Login</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Login</a>
                 </li>
                 <li class="nav-item">
-                    <form action="{{ route('auth.logout') }}" method="POST">
+                    <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button type="submit" class="btn btn-danger">Logout</button>
                     </form>
