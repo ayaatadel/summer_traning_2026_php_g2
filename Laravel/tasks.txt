@@ -21,3 +21,8 @@ any table has relation with another table use this relatio
 ============== product ===> categoryName(click==> category.show) 
 
 handel login and register for user
+
+
+
+=================== Day 4 =========
+hangel authentication with (breez or jetstream)

@@ -1,0 +1,37 @@
+== Authentication  (login , Register): handel
+----- user , admin , super admin --------
+login  ===> form ==> select (already exist or not )
+register ===> form ===> select (store in data base)
+
+======================
+
+--------- Laravel Authentication -----
+1-breeze
+composer require laravel/breeze --dev
+php artisan breeze:install   ===> blade 
+npm install
+npm run build
+php artisan migrate
+php artisan serve
+
+
+Routes(
+
+    /login
+    /register
+    /logout
+    /forget-password
+)
+
+2- jetstream :
+composer require laravel/jetstream
+php artisan jetstream:install livewire
+npm install
+npm run build
+php artisan migrate
+php artisan serve
+
+==================================
+== Authorization : Access , Privilages 
+== Middleware   
+== API
