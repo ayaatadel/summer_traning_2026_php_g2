@@ -51,10 +51,17 @@ php artisan make:middleware checkRole
 ========= Group =======
 
 
-== API : Apllication program Interface
+== API : Apllication program Interface ==> php artisan install:api
+---------> routes -==> api.php
+
+** return  : Json [
+    "key"=>value
+] **
 
 laravel    <====  API  ===> mobile 
 controller , model ,migrtation , seeder , factory , request , middleware  ==>all except (view)
 
 postman : https://www.postman.com/downloads/ 
 register on postman 
+
+
