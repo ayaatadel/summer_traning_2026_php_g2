@@ -3,8 +3,6 @@
                -- Account On github 
                -- Extension on vs Code 
 
-
-
 ============= OPen Ai 
 account on open ai : Openai.com
 documentation : https://developers.openai.com/api/docs
@@ -14,4 +12,21 @@ api key : https://platform.openai.com/api-keys
 ==================== Show models in Open ai key :
 postman :  https://api.openai.com/v1/models
 method : get 
-Autherixation : Bearer Token 
+Autherization : Bearer Token 
+key: sk-proj--7IG32EA
+
+
+================= Gemini =========
+post : https://generativelanguage.googleapis.com/v1beta/models
+Headers : 
+x-goog-api-key: YOUR_API_KEY
+
+============ open router : 
+header : https://openrouter.ai/api/v1/models
+Autherization : Bearer Token 
+key: sk-proj--7IG32EA
+
+==============
+Generate image : https://developers.openai.com/api/reference/resources/images/methods/generate
+chat completeion : https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create
+
