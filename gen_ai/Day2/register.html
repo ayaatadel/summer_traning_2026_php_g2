@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register | FlowBoard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="auth-page">
+    <div class="auth-layout">
+      <section class="auth-showcase">
+        <div class="brand auth-brand">
+          <div class="brand-mark">F</div>
+          <span>FlowBoard</span>
+        </div>
+        <h1>Create your account</h1>
+        <p>Join FlowBoard to monitor growth, collaborate on tasks, and stay on top of your business metrics.</p>
+
+        <ul class="auth-features">
+          <li>Personalized dashboard</li>
+          <li>Secure session storage</li>
+          <li>Instant access after signup</li>
+        </ul>
+      </section>
+
+      <section class="auth-card card">
+        <div class="auth-card-header">
+          <h2>Register</h2>
+          <p>Fill in your details to get started</p>
+        </div>
+
+        <form id="register-form" class="auth-form">
+          <div class="form-group">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" placeholder="Hannah Stone" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="role">Role</label>
+            <input id="role" name="role" type="text" placeholder="Product designer" />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="At least 6 characters" required />
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirm password</label>
+            <input
+              id="confirmPassword"
+              name="confirmPassword"
+              type="password"
+              placeholder="Repeat password"
+              required
+            />
+          </div>
+
+          <div id="register-message" class="form-message" hidden></div>
+
+          <button class="action-btn auth-submit" type="submit">Create account</button>
+        </form>
+
+        <p class="auth-switch">
+          Already have an account?
+          <a href="login.html">Sign in</a>
+        </p>
+      </section>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+      redirectIfAuthenticated();
+
+      const form = document.getElementById("register-form");
+      const message = document.getElementById("register-message");
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        showFormMessage(message, "");
+
+        const submitBtn = form.querySelector("button[type='submit']");
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Creating account...";
+
+        try {
+          const result = await register({
+            name: form.name.value,
+            email: form.email.value,
+            role: form.role.value,
+            password: form.password.value,
+            confirmPassword: form.confirmPassword.value,
+          });
+
+          if (!result.success) {
+            showFormMessage(message, result.message, "error");
+            return;
+          }
+
+          showFormMessage(message, "Account created. Redirecting...", "success");
+          window.location.href = "index.html";
+        } catch {
+          showFormMessage(message, "Could not load app data. Use a local server.", "error");
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Create account";
+        }
+      });
+    </script>
+  </body>
+</html>

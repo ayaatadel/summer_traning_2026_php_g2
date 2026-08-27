@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | FlowBoard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="auth-page">
+    <div class="auth-layout">
+      <section class="auth-showcase">
+        <div class="brand auth-brand">
+          <div class="brand-mark">F</div>
+          <span>FlowBoard</span>
+        </div>
+        <h1>Welcome back</h1>
+        <p>Sign in to access your dashboard, track performance, and manage projects in one place.</p>
+
+        <ul class="auth-features">
+          <li>Real-time analytics overview</li>
+          <li>Order and task management</li>
+          <li>Live activity feed</li>
+        </ul>
+      </section>
+
+      <section class="auth-card card">
+        <div class="auth-card-header">
+          <h2>Login</h2>
+          <p>Enter your credentials to continue</p>
+        </div>
+
+        <form id="login-form" class="auth-form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="hannah@flowboard.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Enter password" required />
+          </div>
+
+          <div id="login-message" class="form-message" hidden></div>
+
+          <button class="action-btn auth-submit" type="submit">Sign in</button>
+        </form>
+
+        <p class="auth-switch">
+          Don't have an account?
+          <a href="register.html">Create one</a>
+        </p>
+
+        <div class="demo-box">
+          <strong>Demo account</strong>
+          <p>Email: hannah@flowboard.com</p>
+          <p>Password: 123456</p>
+        </div>
+      </section>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+      redirectIfAuthenticated();
+
+      const form = document.getElementById("login-form");
+      const message = document.getElementById("login-message");
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        showFormMessage(message, "");
+
+        const email = form.email.value.trim();
+        const password = form.password.value;
+        const submitBtn = form.querySelector("button[type='submit']");
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Signing in...";
+
+        try {
+          const result = await login(email, password);
+
+          if (!result.success) {
+            showFormMessage(message, result.message, "error");
+            return;
+          }
+
+          showFormMessage(message, "Login successful. Redirecting...", "success");
+          window.location.href = "index.html";
+        } catch {
+          showFormMessage(message, "Could not load app data. Use a local server.", "error");
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Sign in";
+        }
+      });
+    </script>
+  </body>
+</html>

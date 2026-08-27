@@ -1,0 +1,188 @@
+{
+  "users": [
+    {
+      "email": "hannah@flowboard.com",
+      "password": "123456",
+      "name": "Hannah Stone",
+      "firstName": "Hannah",
+      "initials": "HS",
+      "role": "Product designer",
+      "avatar": "H"
+    },
+    {
+      "email": "demo@flowboard.com",
+      "password": "demo123",
+      "name": "Demo User",
+      "firstName": "Demo",
+      "initials": "DU",
+      "role": "Analyst",
+      "avatar": "D"
+    }
+  ],
+  "stats": [
+    {
+      "title": "Total Revenue",
+      "value": 84200,
+      "format": "currency",
+      "icon": "↗",
+      "trend": 12.8,
+      "direction": "up"
+    },
+    {
+      "title": "Active Users",
+      "value": 24800,
+      "format": "compact",
+      "icon": "◎",
+      "trend": 9.4,
+      "direction": "up"
+    },
+    {
+      "title": "Conversion",
+      "value": 6.7,
+      "format": "percent",
+      "icon": "▣",
+      "trend": 1.2,
+      "direction": "down"
+    },
+    {
+      "title": "Retention",
+      "value": 92.3,
+      "format": "percent",
+      "icon": "✦",
+      "trend": 3.6,
+      "direction": "up"
+    }
+  ],
+  "salesChart": {
+    "period": "This year",
+    "points": [42, 58, 48, 72, 65, 78, 88, 82, 95, 91, 98, 100],
+    "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+  },
+  "orders": [
+    {
+      "id": 1,
+      "customer": "Ava Martin",
+      "initial": "A",
+      "avatarClass": "red",
+      "project": "Website redesign",
+      "date": "12 Aug 2026",
+      "status": "done",
+      "total": 2480
+    },
+    {
+      "id": 2,
+      "customer": "Liam Cruz",
+      "initial": "L",
+      "avatarClass": "blue",
+      "project": "Mobile app",
+      "date": "11 Aug 2026",
+      "status": "pending",
+      "total": 5320
+    },
+    {
+      "id": 3,
+      "customer": "Noah Reed",
+      "initial": "N",
+      "avatarClass": "green",
+      "project": "UX audit",
+      "date": "09 Aug 2026",
+      "status": "review",
+      "total": 1890
+    },
+    {
+      "id": 4,
+      "customer": "Emma Lee",
+      "initial": "E",
+      "avatarClass": "gold",
+      "project": "Landing page",
+      "date": "07 Aug 2026",
+      "status": "done",
+      "total": 980
+    },
+    {
+      "id": 5,
+      "customer": "Sophia Chen",
+      "initial": "S",
+      "avatarClass": "blue",
+      "project": "Brand identity",
+      "date": "06 Aug 2026",
+      "status": "pending",
+      "total": 4150
+    },
+    {
+      "id": 6,
+      "customer": "Marcus Webb",
+      "initial": "M",
+      "avatarClass": "green",
+      "project": "Dashboard UI",
+      "date": "05 Aug 2026",
+      "status": "review",
+      "total": 3670
+    }
+  ],
+  "performance": {
+    "value": 62,
+    "achieved": 62,
+    "target": 100
+  },
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Team sync",
+      "time": "Today, 3:00 PM",
+      "badge": "Design",
+      "badgeClass": "info",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Prototype review",
+      "time": "Tomorrow, 11:30 AM",
+      "badge": "UI",
+      "badgeClass": "warning",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "title": "Launch checklist",
+      "time": "Fri, 2:00 PM",
+      "badge": "Ops",
+      "badgeClass": "info",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "title": "Client presentation",
+      "time": "Mon, 10:00 AM",
+      "badge": "Sales",
+      "badgeClass": "warning",
+      "completed": true
+    }
+  ],
+  "activities": [
+    { "icon": "↗", "message": "Revenue increased", "time": "12 minutes ago" },
+    { "icon": "◎", "message": "New customer joined", "time": "42 minutes ago" },
+    { "icon": "✦", "message": "Campaign reached goal", "time": "1 hour ago" },
+    { "icon": "▣", "message": "New order received", "time": "2 hours ago" },
+    { "icon": "✓", "message": "Project marked complete", "time": "3 hours ago" }
+  ],
+  "monthlyGrowth": {
+    "growth": 18.5,
+    "months": [
+      { "label": "Jan", "value": 42 },
+      { "label": "Feb", "value": 55 },
+      { "label": "Mar", "value": 48 },
+      { "label": "Apr", "value": 72 },
+      { "label": "May", "value": 68 },
+      { "label": "Jun", "value": 92 }
+    ]
+  },
+  "liveActivityPool": [
+    { "icon": "↗", "message": "Revenue spike detected" },
+    { "icon": "◎", "message": "New signup from Berlin" },
+    { "icon": "✦", "message": "Weekly goal hit" },
+    { "icon": "▣", "message": "Invoice paid" },
+    { "icon": "✓", "message": "Task completed" },
+    { "icon": "☰", "message": "Report exported" }
+  ]
+}

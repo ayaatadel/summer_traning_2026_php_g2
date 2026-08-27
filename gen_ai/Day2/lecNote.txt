@@ -1,0 +1,17 @@
+============ Cursor
+================ GitHub copilot
+               -- Account On github 
+               -- Extension on vs Code 
+
+
+
+============= OPen Ai 
+account on open ai : Openai.com
+documentation : https://developers.openai.com/api/docs
+api key : https://platform.openai.com/api-keys
+
+
+==================== Show models in Open ai key :
+postman :  https://api.openai.com/v1/models
+method : get 
+Autherixation : Bearer Token 
