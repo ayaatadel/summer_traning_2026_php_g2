@@ -235,6 +235,21 @@
             padding: 15px 0;
         }
 
+        .dashboard-action {
+            display: inline-block;
+            background: var(--coral);
+            color: #fff;
+            padding: 13px 18px;
+            font: 700 12px Arial, sans-serif;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .dashboard-action:hover {
+            color: #fff;
+            background: #c9654d;
+        }
+
         @media (max-width: 900px) {
             .stat-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -294,7 +309,10 @@
                 <p class="hero-copy">A clear view of your store, from today's orders to the products that need your
                     attention.</p>
             </div>
-            <div class="date-chip">{{ now()->format('D, d M Y') }}</div>
+            <div class="d-flex flex-column align-items-start gap-3">
+                <a class="dashboard-action" href="{{ route('products.create') }}">+ Add product</a>
+                <div class="date-chip">{{ now()->format('D, d M Y') }}</div>
+            </div>
         </header>
 
         <section class="stat-grid" aria-label="Store summary">

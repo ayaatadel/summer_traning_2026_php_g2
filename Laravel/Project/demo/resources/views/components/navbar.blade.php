@@ -6,7 +6,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-lg-center">
+                @auth
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('dashboard') }}">Dashboard</a>
                 </li>
@@ -22,19 +23,23 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('categories.index') }}">Categories</a>
                 </li>
-
+                @endauth
+                @guest
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('register') }}">Register</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('login') }}">Login</a>
                 </li>
+                @endguest
+                @auth
                 <li class="nav-item">
-                    <form action="{{ route('logout') }}" method="POST">
+                    <form class="d-inline" action="{{ route('logout') }}" method="POST">
                         @csrf
-                        <button type="submit" class="btn btn-danger">Logout</button>
+                        <button type="submit" class="btn btn-sm btn-danger ms-lg-2">Logout</button>
                     </form>
                 </li>
+                @endauth
             </ul>
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

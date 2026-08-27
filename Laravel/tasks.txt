@@ -38,3 +38,16 @@ auth + user ==>  products
 login register (scantum)
 
 
+
+
+
+================= task =========
+generate admin dashboard : display all admind acsses data [categories , users , products]
+user : products , add to cart , cart (display all products in cart)
+
+====== gnertate chatboot : admin : access admin
+                          user : user acess ===> admin : error message
+
+generate porofolio for your self and put all projects that you : vibe coding 
+
+

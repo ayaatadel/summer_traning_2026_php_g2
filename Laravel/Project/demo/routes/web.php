@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\checkRole;
 use Illuminate\Support\Facades\Route;
@@ -103,6 +104,8 @@ Route::get('/', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('checkRole');
+    Route::get('/admin/products/create', [ProductController::class, 'create'])->name('products.create')->middleware('checkRole');
+    Route::post('/admin/products', [ProductController::class, 'store'])->name('products.store')->middleware('checkRole');
     Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
     Route::post('/chat/send', [ChatController::class, 'sendMessage'])->name('chat.send');
 });
