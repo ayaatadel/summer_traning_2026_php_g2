@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\checkRole;
 use Illuminate\Support\Facades\Route;
@@ -101,13 +102,14 @@ Route::get('/', function () {
 // Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
 
 Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('checkRole');
     Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
     Route::post('/chat/send', [ChatController::class, 'sendMessage'])->name('chat.send');
 });
 
 //==================== Users ===============
 
-route::get("/users", [UserController::class, 'index'])->name("users.index")->middleware(['auth','checkRole']);
+route::get("/users", [UserController::class, 'index'])->name("users.index")->middleware(['auth', 'checkRole']);
 // route::get('/users/{id}', [UserController::class, 'show'])->name('users.show')->middleware('auth');
 // route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy')->middleware(checkRole::class);
 
@@ -118,9 +120,9 @@ route::get("/users", [UserController::class, 'index'])->name("users.index")->mid
 //     route::resource("categories", CategoryController::class);
 // }
 // );
-  route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
-    route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
-    route::resource("categories", CategoryController::class);
+route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
+route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+route::resource("categories", CategoryController::class);
 
 route::get('/showLogin', [AuthController::class, 'showLogin'])->name('login');
 route::post('/login', [AuthController::class, 'login'])->name('auth.login');
