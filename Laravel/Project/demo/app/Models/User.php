@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use APP\Models\Order;
+use App\Models\Order;
 
 #[Fillable(['name', 'email', 'password'])]
 #[Hidden(['password', 'remember_token'])]
@@ -35,7 +35,8 @@ class User extends Authenticatable
 
     // -------------- relation with orders ---------
 
-    function orders(){
+    function orders()
+    {
         return $this->hasMany(Order::class);
     }
 }

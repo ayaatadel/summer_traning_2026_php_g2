@@ -23,11 +23,11 @@
     <input type="text" class="form-control"  name="name" id="category_name" >
   </div>
   <div class="mb-3">
-       @error('descripyion')
+       @error('description')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
     <label for="category_description" class="form-label">Category Description</label>
-    <input type="text" class="form-control" name="descripyion" id="category_description">
+    <input type="text" class="form-control" name="description" id="category_description">
   </div>
 
   <button type="submit" class="btn btn-primary">Update</button>

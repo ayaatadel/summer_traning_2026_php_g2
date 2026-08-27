@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\checkRole;
 use Illuminate\Support\Facades\Route;
@@ -95,8 +96,14 @@ Route::get('/', function () {
  * delete
  */
 
+// ================= Chat boot routes ==========
+// Route::post('/chat/send', [ChatController::class, 'sendMessage'])->name('chat.send');
+// Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
 
-
+Route::middleware(['auth'])->group(function () {
+    Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
+    Route::post('/chat/send', [ChatController::class, 'sendMessage'])->name('chat.send');
+});
 
 //==================== Users ===============
 
@@ -104,13 +111,16 @@ route::get("/users", [UserController::class, 'index'])->name("users.index")->mid
 // route::get('/users/{id}', [UserController::class, 'show'])->name('users.show')->middleware('auth');
 // route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy')->middleware(checkRole::class);
 
-Route::middleware(['auth','checkRole'])->group(function () {
+// Route::middleware(['auth','checkRole'])->group(function () {
 
-    route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
+//     route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
+//     route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+//     route::resource("categories", CategoryController::class);
+// }
+// );
+  route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
     route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
     route::resource("categories", CategoryController::class);
-}
-);
 
 route::get('/showLogin', [AuthController::class, 'showLogin'])->name('login');
 route::post('/login', [AuthController::class, 'login'])->name('auth.login');

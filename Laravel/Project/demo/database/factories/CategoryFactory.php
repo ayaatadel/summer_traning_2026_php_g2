@@ -20,7 +20,7 @@ class CategoryFactory extends Factory
         return [
             //name , description , created , updated at
             "name"=>fake()->company(),
-            "descripyion"=>fake()->sentence(),
+            "description"=>fake()->sentence(),
              "created_at"=>now(),
              "updated_at"=>now()
         ];

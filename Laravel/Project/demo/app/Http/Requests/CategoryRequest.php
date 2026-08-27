@@ -24,7 +24,7 @@ class CategoryRequest extends FormRequest
     {
         return  [
                 "name" => "required|min:3|max:20|string|unique:categories,name",
-                "descripyion" => "min:12|max:100|required|string"
+                "description" => "min:12|max:100|required|string"
             ];
     }
 
@@ -33,8 +33,8 @@ class CategoryRequest extends FormRequest
                 "name.required"=>"name is required",
                 "name.min"=>"name must be at least 3 characters ",
                 "name.unique"=>"name is already exist",
-                "descripyion.required"=>"descripyion is required",
-                "descripyion.min"=>"descripyion must be at least 12 characters ",
+                "description.required"=>"description is required",
+                "description.min"=>"description must be at least 12 characters ",
             ];
     }
 }

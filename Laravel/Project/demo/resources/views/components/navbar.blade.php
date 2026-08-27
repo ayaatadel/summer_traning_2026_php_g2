@@ -11,6 +11,9 @@
                     <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ route('chat.index') }}">Chat AI</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('users.index') }}">Users</a>
                 </li>
                 <li class="nav-item">

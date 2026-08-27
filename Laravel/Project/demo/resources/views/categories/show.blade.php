@@ -44,7 +44,7 @@
                     {{$category["name"] }}
                 </td>
                 <td>
-                    {{$category["descripyion"] }}
+                    {{$category["description"] }}
                 </td>
                 <td class="d-flex justify-content-around">
                     <div>
